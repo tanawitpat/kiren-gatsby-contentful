@@ -70,7 +70,6 @@ const IndexPage: React.FC<Props> = ({ className }) => {
           </h1>
           <div className="best-seller__products">
             {bestSellerData.allContentfulProduct.edges.map((edge) => {
-              console.log(edge.node);
               return (
                 <ProductCard
                   code={edge.node.code}

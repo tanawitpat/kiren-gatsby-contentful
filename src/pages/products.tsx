@@ -34,12 +34,11 @@ const ProductsPage: React.FC<Props> = ({ className }) => {
   `);
 
   return (
-    <Layout>
+    <Layout title="สินค้าทั้งหมด">
       <div className={className}>
         <h1>สินค้าทั้งหมด</h1>
         <div className="product-grid">
           {productsData.allContentfulProduct.edges.map((edge) => {
-            console.log(edge.node);
             return (
               <ProductCard
                 code={edge.node.code}

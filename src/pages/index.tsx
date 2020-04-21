@@ -1,17 +1,41 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
+
 import Layout from "../components/Layout";
 import FeatureCard from "../components/FeatureCard";
 import ProductCard from "../components/ProductCard";
-import productData from "../../static/products.json";
 
 interface Props {
   className?: string;
 }
 
 const IndexPage: React.FC<Props> = ({ className }) => {
-  const products = productData;
+  const bestSellerData = useStaticQuery(graphql`
+    query {
+      allContentfulProduct(
+        filter: { bestSeller: { eq: true } }
+        sort: { fields: publishedDate, order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            code
+            name
+            price
+            publishedDate(formatString: "MMMM Do, YYYY")
+            slug
+            bestSeller
+            thumbnail {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <Layout>
@@ -45,22 +69,19 @@ const IndexPage: React.FC<Props> = ({ className }) => {
             <span>สินค้าขายดี</span>
           </h1>
           <div className="best-seller__products">
-            {products.map(
-              ({
-                product_id,
-                product_name_th,
-                product_price,
-                product_image_path,
-              }) => (
+            {bestSellerData.allContentfulProduct.edges.map((edge) => {
+              console.log(edge.node);
+              return (
                 <ProductCard
-                  id={product_id}
-                  name={product_name_th}
-                  price={product_price}
-                  imagePath={product_image_path}
-                  key={product_id}
+                  code={edge.node.code}
+                  slug={edge.node.slug}
+                  name={edge.node.name}
+                  price={edge.node.price}
+                  imagePath={edge.node.thumbnail.file.url}
+                  key={edge.node.id}
                 />
-              )
-            )}
+              );
+            })}
           </div>
           <Link to="/products">
             <button className="best-seller__view-all-button">

@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 interface Props {
   title?: string;
@@ -25,6 +26,7 @@ const Layout: React.FC<Props> = ({ title, children }) => (
     <GlobalStyle>
       <Navbar />
       {children}
+      <Footer />
     </GlobalStyle>
   </>
 );
@@ -40,10 +42,8 @@ const GlobalStyle = styled.div`
   }
 
   body {
-    margin: 0;
     font-size: 16px;
     line-height: 1.7;
-    font-family: "Poppins", "Kanit", "sans-serif";
   }
 `;
 

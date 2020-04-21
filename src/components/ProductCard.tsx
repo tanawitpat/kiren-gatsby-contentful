@@ -4,20 +4,27 @@ import { Link } from "gatsby";
 import formatPrice from "../utils/formatPrice";
 
 interface Props {
-  id: string;
+  code: string;
   name: string;
   imagePath: string;
   price: number;
+  slug: string;
 }
 
-const ProductCard: React.FC<Props> = ({ id, name, imagePath, price }) => (
+const ProductCard: React.FC<Props> = ({
+  code,
+  name,
+  imagePath,
+  price,
+  slug,
+}) => (
   <StyledProductCard>
-    <Link to={`/product/${id}`}>
+    <Link to={`/product/${slug}`}>
       <img src={imagePath} alt="" />
       <div className="detail">
-        <p className="detail__id">{id}</p>
+        <p className="detail__id">{code}</p>
         <h3 className="detail__name">{name}</h3>
-        <p className="detail__price">{formatPrice(price)} THB</p>
+        <p className="detail__price">{formatPrice(price)} บาท</p>
       </div>
     </Link>
   </StyledProductCard>
@@ -36,20 +43,29 @@ const StyledProductCard = styled.div`
   }
 
   .detail {
+    padding: 0 10px;
+
+    > * {
+      color: black;
+      margin: 0;
+    }
+
     &__name {
       margin: 0.3rem 0;
       font-weight: 600;
       color: black;
     }
 
-    &__id,
+    &__id {
+      font-size: 16px;
+    }
+
     &__price {
-      margin: 0;
-      color: black;
+      font-size: 18px;
     }
   }
 
-  :hover {
+  &:hover {
     opacity: 0.75;
   }
 `;

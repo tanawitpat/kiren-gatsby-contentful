@@ -27,13 +27,7 @@ export const query = graphql`
 
 const Product = (props) => {
   const options = {};
-  const {
-    name,
-    code,
-    price,
-    publishedDate,
-    body,
-  } = props.data.contentfulProduct;
+  const { name, code, price, body } = props.data.contentfulProduct;
 
   return (
     <Layout>

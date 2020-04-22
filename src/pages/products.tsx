@@ -62,7 +62,7 @@ const StyledProductsPage = styled(ProductsPage)`
   padding: 60px 60px;
 
   h1 {
-    font-size: 2rem;
+    font-size: 32px;
     text-align: center;
     margin-top: 0;
     margin-bottom: 50px;

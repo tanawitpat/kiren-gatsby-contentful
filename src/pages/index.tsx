@@ -1,41 +1,18 @@
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { Link } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import FeatureCard from "../components/FeatureCard";
 import ProductCard from "../components/ProductCard";
+import { fetchBestSellerProducts } from "../queries";
 
 interface Props {
   className?: string;
 }
 
 const IndexPage: React.FC<Props> = ({ className }) => {
-  const bestSellerData = useStaticQuery(graphql`
-    query {
-      allContentfulProduct(
-        filter: { bestSeller: { eq: true } }
-        sort: { fields: publishedDate, order: DESC }
-      ) {
-        edges {
-          node {
-            id
-            code
-            name
-            price
-            publishedDate(formatString: "MMMM Do, YYYY")
-            slug
-            bestSeller
-            thumbnail {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  const bestSellerData = fetchBestSellerProducts();
 
   return (
     <Layout>
@@ -70,14 +47,16 @@ const IndexPage: React.FC<Props> = ({ className }) => {
           </h1>
           <div className="best-seller__products">
             {bestSellerData.allContentfulProduct.edges.map((edge) => {
+              const { code, slug, name, price, thumbnail, id } = edge.node;
+
               return (
                 <ProductCard
-                  code={edge.node.code}
-                  slug={edge.node.slug}
-                  name={edge.node.name}
-                  price={edge.node.price}
-                  imagePath={edge.node.thumbnail.file.url}
-                  key={edge.node.id}
+                  code={code}
+                  slug={slug}
+                  name={name}
+                  price={price}
+                  imagePath={thumbnail.file.url}
+                  key={id}
                 />
               );
             })}
@@ -120,7 +99,6 @@ const StyledIndexPage = styled(IndexPage)`
 
       h1 {
         font-size: 3.75rem;
-        font-weight: 600;
         line-height: 70%;
       }
 
@@ -166,7 +144,7 @@ const StyledIndexPage = styled(IndexPage)`
 
     &__view-all-button {
       margin-top: 30px;
-      font-size: 1.2rem;
+      font-size: 18px;
       padding: 15px 20px;
       background-color: #0e5f8a;
       color: #fff;

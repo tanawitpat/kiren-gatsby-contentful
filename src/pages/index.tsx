@@ -12,7 +12,7 @@ interface Props {
 }
 
 const IndexPage: React.FC<Props> = ({ className }) => {
-  const bestSellerData = fetchBestSellerProducts();
+  const bestSellerProducts = fetchBestSellerProducts();
 
   return (
     <Layout>
@@ -46,7 +46,7 @@ const IndexPage: React.FC<Props> = ({ className }) => {
             <span>สินค้าขายดี</span>
           </h1>
           <div className="best-seller__products">
-            {bestSellerData.allContentfulProduct.edges.map((edge) => {
+            {bestSellerProducts.allContentfulProduct.edges.map((edge) => {
               const { code, slug, name, price, thumbnail, id } = edge.node;
 
               return (

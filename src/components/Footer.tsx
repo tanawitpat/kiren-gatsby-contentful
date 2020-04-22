@@ -8,6 +8,7 @@ const Footer: React.FC<Props> = () => {
     <StyledFooter>
       <div className="footer__layout">
         <div className="footer__column footer__summary">
+          <h5 className="footer__title">เกี่ยวกับเรา</h5>
           <p>
             Grillnovator is a professional BBQ business consultant, manufacturer
             and distributor of BBQ equipment under Kiren ® Brand. With more than
@@ -18,6 +19,7 @@ const Footer: React.FC<Props> = () => {
           </p>
         </div>
         <div className="footer__column footer__contact">
+          <h5 className="footer__title">ติดต่อเรา</h5>
           <div className="footer__contact--address-th">
             <p>Grillnovator Limited Partnership</p>
             <p>21/507 Moo 8, Om Yai, Sam Phran, Nakhon Pathom 73160 Thailand</p>
@@ -64,6 +66,12 @@ const StyledFooter = styled.div`
       }
     }
 
+    &__title {
+      font-size: 20px;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+
     &__column {
       padding: 50px 15px;
     }
@@ -75,7 +83,7 @@ const StyledFooter = styled.div`
     }
 
     &__contact {
-      > * {
+      > div {
         &:not(:last-child) {
           margin-bottom: 25px;
         }

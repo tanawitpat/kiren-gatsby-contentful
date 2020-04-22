@@ -51,8 +51,8 @@ const StyledProductCard = styled.div`
     }
 
     &__name {
-      margin: 0.3rem 0;
-      font-weight: 600;
+      margin: 10px 0;
+      font-weight: bold;
       color: black;
     }
 

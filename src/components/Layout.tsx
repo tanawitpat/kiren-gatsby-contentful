@@ -32,19 +32,9 @@ const Layout: React.FC<Props> = ({ title, children }) => (
 );
 
 const GlobalStyle = styled.div`
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
   font-family: "Poppins", "Kanit", "sans-serif";
-
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-  }
-
-  body {
-    font-size: 16px;
-    line-height: 1.7;
-  }
 `;
 
 export default Layout;

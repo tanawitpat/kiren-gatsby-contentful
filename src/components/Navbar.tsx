@@ -26,7 +26,7 @@ const StyledNavbar = styled.div`
   .navbar {
     list-style-type: none;
     margin: auto;
-    padding: 1rem 4rem;
+    padding: 15px 40px;
     overflow: hidden;
     max-width: 1200px;
 
@@ -34,6 +34,7 @@ const StyledNavbar = styled.div`
     justify-content: space-between;
 
     a {
+      font-size: 18px;
       color: black;
       text-align: center;
       text-decoration: none;
@@ -43,7 +44,7 @@ const StyledNavbar = styled.div`
     &__right {
       > * {
         &:not(:last-child) {
-          margin-right: 3rem;
+          margin-right: 50px;
         }
       }
     }

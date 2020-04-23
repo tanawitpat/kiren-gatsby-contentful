@@ -1,17 +1,30 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { GlobalStyle } from "../theme/global-style";
+import { ThemeProvider } from "styled-components";
 
 interface Props {
   title?: string;
   children: any;
 }
 
+const theme = {
+  colors: {
+    red: "red",
+  },
+};
+
 const Layout: React.FC<Props> = ({ title, children }) => (
   <>
     <Helmet>
+      <html lang="th" />
+      <meta charSet="utf-8" />
+      <meta
+        name="description"
+        content="Kiren BBQ. Thai BBQ stove manufacturer"
+      />
       {title ? (
         <title>คิเร็น Kiren - {title}</title>
       ) : (
@@ -23,18 +36,13 @@ const Layout: React.FC<Props> = ({ title, children }) => (
         type="text/css"
       />
     </Helmet>
-    <GlobalStyle>
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>
       <Navbar />
       {children}
       <Footer />
-    </GlobalStyle>
+    </ThemeProvider>
   </>
 );
-
-const GlobalStyle = styled.div`
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", "Kanit", "sans-serif";
-`;
 
 export default Layout;

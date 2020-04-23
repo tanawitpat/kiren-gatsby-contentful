@@ -17,6 +17,8 @@ module.exports = {
         name: "Kiren BBQ",
         short_name: "Kiren BBQ",
         start_url: "/",
+        background_color: `#ffffff`,
+        theme_color: `#0e8b8a`,
         display: "standalone",
         icon: "static/icon.png",
         crossOrigin: `use-credentials`,

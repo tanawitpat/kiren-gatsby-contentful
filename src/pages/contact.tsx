@@ -3,14 +3,12 @@ import styled from "styled-components";
 
 import Layout from "../components/Layout";
 
-interface Props {
-  className: string;
-}
+interface Props {}
 
-const Contact: React.FC<Props> = ({ className }) => {
+const ContactPage: React.FC<Props> = () => {
   return (
     <Layout title="ติดต่อเรา">
-      <div className={className}>
+      <StyledContactPage>
         <h1>ติดต่อเรา</h1>
         <div className="layout">
           <div className="google-map">
@@ -43,19 +41,19 @@ const Contact: React.FC<Props> = ({ className }) => {
             </div>
           </div>
         </div>
-      </div>
+      </StyledContactPage>
     </Layout>
   );
 };
 
-const StyledContact = styled(Contact)`
+const StyledContactPage = styled.div`
   padding: 60px 60px;
   max-width: 1200px;
   margin: auto;
 
   h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 3.2rem;
     margin-top: 0;
     margin-bottom: 40px;
   }
@@ -79,10 +77,10 @@ const StyledContact = styled(Contact)`
   }
 
   .address {
-    font-size: 20px;
+    font-size: 2rem;
 
     h4 {
-      font-size: 20px;
+      font-size: 2rem;
     }
 
     &__container {
@@ -114,4 +112,4 @@ const StyledContact = styled(Contact)`
   }
 `;
 
-export default StyledContact;
+export default ContactPage;

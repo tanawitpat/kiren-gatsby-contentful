@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+
 import formatPrice from "../utils/formatPrice";
 
 interface Props {
@@ -46,22 +47,22 @@ const StyledProductCard = styled.div`
     padding: 0 10px;
 
     > * {
-      color: black;
+      color: ${({ theme }) => theme.colors.black};
       margin: 0;
     }
 
     &__name {
       margin: 10px 0;
       font-weight: bold;
-      color: black;
+      color: ${({ theme }) => theme.colors.black};
     }
 
     &__id {
-      font-size: 16px;
+      font-size: 1.6rem;
     }
 
     &__price {
-      font-size: 18px;
+      font-size: 1.8rem;
     }
   }
 

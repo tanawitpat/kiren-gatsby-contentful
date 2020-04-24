@@ -41,13 +41,15 @@ const Footer: React.FC<Props> = () => {
 };
 
 const StyledFooter = styled.div`
-  background-color: #333333;
+  background-color: ${({ theme }) => theme.colors.darkgrey1};
+  color: ${({ theme }) => theme.colors.white};
 
   .footer {
     &__layout {
+      font-size: 1.6rem;
       margin: auto;
       max-width: 1200px;
-      color: #fff;
+      color: ${({ theme }) => theme.colors.white};
 
       display: grid;
       grid-template-columns: repeat(3, 1fr);

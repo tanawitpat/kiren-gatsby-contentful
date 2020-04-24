@@ -3,14 +3,12 @@ import styled from "styled-components";
 
 import Layout from "../components/Layout";
 
-interface Props {
-  className: string;
-}
+interface Props {}
 
-const HowToOrder: React.FC<Props> = ({ className }) => {
+const HowToOrderPage: React.FC<Props> = () => {
   return (
     <Layout title="วิธีการสั่งซื้อสินค้า">
-      <div className={className}>
+      <StyledHowToOrderPage>
         <h1>วิธีสั่งซื้อสินค้า</h1>
         <p>
           ในขณะนี้เรายังไม่เปิดให้บริการผ่านหน้าเว็บไซต์ หากต้องการสั่งซื้อ
@@ -30,26 +28,26 @@ const HowToOrder: React.FC<Props> = ({ className }) => {
             <p>chana507</p>
           </div>
         </div>
-      </div>
+      </StyledHowToOrderPage>
     </Layout>
   );
 };
 
-const StyledHowToOrder = styled(HowToOrder)`
+const StyledHowToOrderPage = styled.div`
   margin: auto;
   max-width: 1200px;
   padding: 60px 60px;
   text-align: center;
 
   h1 {
-    font-size: 32px;
+    font-size: 3.2rem;
     text-align: center;
     margin-top: 0;
     margin-bottom: 40px;
   }
 
   p {
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .contact {
@@ -59,7 +57,7 @@ const StyledHowToOrder = styled(HowToOrder)`
     > div {
       margin: 0 auto;
       max-width: 550px;
-      font-size: 20px;
+      font-size: 2rem;
 
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -81,4 +79,4 @@ const StyledHowToOrder = styled(HowToOrder)`
   }
 `;
 
-export default StyledHowToOrder;
+export default HowToOrderPage;

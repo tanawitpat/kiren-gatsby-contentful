@@ -21,7 +21,7 @@ const StyledFeatureCard = styled.div`
   grid-template-columns: 80px 1fr;
 
   h4 {
-    font-size: 18px;
+    font-size: 1.8rem;
     margin: 0 0 10px 0;
   }
 

@@ -8,6 +8,8 @@
 
 A static product catalog website. Built by TypeScript, Gatsby, and Contentful.
 
+![Lighthouse score](https://user-images.githubusercontent.com/25366268/80223299-4ded1c00-8672-11ea-8242-7c0e13f5b9a5.png)
+
 Gatsby will fetch product data from Contentful and create product detail pages during the build process.
 
 ![Build process](https://user-images.githubusercontent.com/25366268/80006436-1144e780-84ef-11ea-8f94-3503272000a2.png)

@@ -7,16 +7,14 @@ import FeatureCard from "../components/FeatureCard";
 import ProductCard from "../components/ProductCard";
 import { fetchBestSellerProducts } from "../queries";
 
-interface Props {
-  className?: string;
-}
+interface Props {}
 
-const IndexPage: React.FC<Props> = ({ className }) => {
+const IndexPage: React.FC<Props> = () => {
   const bestSellerProducts = fetchBestSellerProducts();
 
   return (
     <Layout>
-      <div className={className}>
+      <StyledIndexPage>
         <div className="carousel">
           <div className="carousel__cover">
             <div className="carousel__description">
@@ -67,12 +65,12 @@ const IndexPage: React.FC<Props> = ({ className }) => {
             </button>
           </Link>
         </div>
-      </div>
+      </StyledIndexPage>
     </Layout>
   );
 };
 
-const StyledIndexPage = styled(IndexPage)`
+const StyledIndexPage = styled.div`
   .carousel {
     height: 600px;
     background-size: cover;
@@ -95,15 +93,15 @@ const StyledIndexPage = styled(IndexPage)`
 
     &__description {
       text-align: center;
-      color: rgb(70, 70, 70);
+      color: ${({ theme }) => theme.colors.darkgrey2};
 
       h1 {
-        font-size: 3.75rem;
+        font-size: 6rem;
         line-height: 70%;
       }
 
       p {
-        font-size: 1.8rem;
+        font-size: 2.8rem;
         line-height: 70%;
       }
     }
@@ -126,7 +124,7 @@ const StyledIndexPage = styled(IndexPage)`
     text-align: center;
 
     h1 {
-      border-bottom: 1.5px solid #0e5f8a;
+      border-bottom: 1.5px solid ${({ theme }) => theme.colors.primary};
       line-height: 0.1em;
       margin: 0 0 60px 0;
 
@@ -146,8 +144,9 @@ const StyledIndexPage = styled(IndexPage)`
       margin-top: 30px;
       font-size: 18px;
       padding: 15px 20px;
-      background-color: #0e5f8a;
-      color: #fff;
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme: { colors } }) => colors.white};
+
       border: none;
       transition: all 0.2s;
 
@@ -159,4 +158,4 @@ const StyledIndexPage = styled(IndexPage)`
   }
 `;
 
-export default StyledIndexPage;
+export default IndexPage;

@@ -5,16 +5,14 @@ import Layout from "../components/Layout";
 import ProductCard from "../components/ProductCard";
 import { fetchProducts } from "../queries";
 
-interface Props {
-  className: string;
-}
+interface Props {}
 
-const ProductsPage: React.FC<Props> = ({ className }) => {
+const ProductsPage: React.FC<Props> = () => {
   const products = fetchProducts();
 
   return (
     <Layout title="สินค้าทั้งหมด">
-      <div className={className}>
+      <StyledProductsPage>
         <h1>สินค้าทั้งหมด</h1>
         <div className="product-grid">
           {products.allContentfulProduct.edges.map((edge) => {
@@ -32,18 +30,18 @@ const ProductsPage: React.FC<Props> = ({ className }) => {
             );
           })}
         </div>
-      </div>
+      </StyledProductsPage>
     </Layout>
   );
 };
 
-const StyledProductsPage = styled(ProductsPage)`
+const StyledProductsPage = styled.div`
   max-width: 1200px;
   margin: auto;
   padding: 60px 60px;
 
   h1 {
-    font-size: 32px;
+    font-size: 3.2rem;
     text-align: center;
     margin-top: 0;
     margin-bottom: 50px;
@@ -56,4 +54,4 @@ const StyledProductsPage = styled(ProductsPage)`
   }
 `;
 
-export default StyledProductsPage;
+export default ProductsPage;

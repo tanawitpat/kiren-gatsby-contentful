@@ -1,20 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { ThemeProvider } from "styled-components";
+
+import { GlobalStyle, theme } from "../styles";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { GlobalStyle } from "../theme/global-style";
-import { ThemeProvider } from "styled-components";
 
 interface Props {
   title?: string;
   children: any;
 }
-
-const theme = {
-  colors: {
-    red: "red",
-  },
-};
 
 const Layout: React.FC<Props> = ({ title, children }) => (
   <>

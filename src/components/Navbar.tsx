@@ -34,8 +34,8 @@ const StyledNavbar = styled.div`
     justify-content: space-between;
 
     a {
-      font-size: 18px;
-      color: black;
+      font-size: 1.8rem;
+      color: ${({ theme }) => theme.colors.black};
       text-align: center;
       text-decoration: none;
       cursor: pointer;

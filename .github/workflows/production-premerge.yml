@@ -16,6 +16,8 @@ jobs:
           ref: production
       - name: Install Dependencies
         run: yarn install
+      - name: Run unit tests
+        run: yarn test
       - name: Build
         run: yarn build
         env:

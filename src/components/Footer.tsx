@@ -20,21 +20,30 @@ const Footer: React.FC<Props> = () => {
         </div>
         <div className="footer__column footer__contact">
           <h5 className="footer__title">ติดต่อเรา</h5>
-          <div className="footer__contact--address-th">
+          <div>
             <p>Grillnovator Limited Partnership</p>
             <p>21/507 Moo 8, Om Yai, Sam Phran, Nakhon Pathom 73160 Thailand</p>
           </div>
-          <div className="footer__contact--address-en">
+          <div>
             <p>ห้างหุ้นส่วนจำกัด กริลโนเวเตอร์</p>
             <p>21/507 หมู่ 8, อ้อมใหญ่, สามพราน, นครปฐม 73160</p>
           </div>
-          <div className="footer__contact--address">
+          <div>
             <p>Tel: +66 6 3625 3593, +66 6 3629 5562</p>
             <p>Line ID: Chana507</p>
             <p>Email: info@grillnovator.com</p>
           </div>
         </div>
-        <div className="footer__column" />
+        <div className="footer__column">
+          <h5 className="footer__title">หมายเหตุ</h5>
+          <div>
+            <p>
+              เว็บไซต์นี้ถูกสร้างขึ้นเพื่อการทดลองเท่านั้น
+              ข้อมูลในเว็บไซต์นี้ไม่สามารถใช้อ้างอิงกับราคาสินค้าจริงได้
+            </p>
+            <p>พัฒนาโดย Tanawit Pattanaveerangkoon</p>
+          </div>
+        </div>
       </div>
     </StyledFooter>
   );

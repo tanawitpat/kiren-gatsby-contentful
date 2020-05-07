@@ -22,8 +22,8 @@ To deploy new code, you need to create a pull request to rebase changes onto the
 # 1. Install dependencies
 yarn
 
-# 2. Create .env
-touch .env.develpment
+# 2. Create .env.development
+touch .env.development
 
 #### Paste the following values into the file ####
 GATSBY_GRAPHQL_IDE=playground

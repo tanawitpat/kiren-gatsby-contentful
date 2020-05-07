@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import FeatureCard from "../components/FeatureCard";
 import ProductCard from "../components/ProductCard";
+import CategoryBox from "../components/CategoryBox";
+import InternalLinkButton from "../components/InternalLinkButton";
 import { fetchBestSellerProducts } from "../queries";
 
 interface Props {}
@@ -39,10 +40,23 @@ const IndexPage: React.FC<Props> = () => {
             description="เรายึดมั่นในคุณภาพ สินค้าทุกชิ้นของเรามาพร้อมกับการรับประกันขั้นต่ำ 6 เดือน (และระยะเวลารับประกันที่เพิ่มขึ้นตามแต่ชนิด และรุ่นของสินค้า)"
           />
         </div>
+        <div className="category">
+          <h2 className="section-title">
+            <span>ประเภทสินค้า</span>
+          </h2>
+          <div className="category__items">
+            <CategoryBox
+              title="ชุดเตาย่าง"
+              targetPath="/category/bbq-stove-set"
+            />
+            <CategoryBox title="แผ่นย่าง" targetPath="/category/bbq-plate" />
+            <CategoryBox title="เครื่องดูดควัน" targetPath="/category/hood" />
+          </div>
+        </div>
         <div className="best-seller">
-          <h1>
+          <h2 className="section-title">
             <span>สินค้าขายดี</span>
-          </h1>
+          </h2>
           <div className="best-seller__products">
             {bestSellerProducts.allContentfulProduct.edges.map((edge) => {
               const { code, slug, name, price, thumbnail, id } = edge.node;
@@ -59,11 +73,12 @@ const IndexPage: React.FC<Props> = () => {
               );
             })}
           </div>
-          <Link to="/products">
-            <button className="best-seller__view-all-button">
-              ดูสินค้าทั้งหมด
-            </button>
-          </Link>
+          <div className="view-all-product-button">
+            <InternalLinkButton
+              label="ดูสินค้าทั้งหมด"
+              targetPath="/products"
+            />
+          </div>
         </div>
       </StyledIndexPage>
     </Layout>
@@ -118,42 +133,41 @@ const StyledIndexPage = styled.div`
     grid-gap: 30px;
   }
 
+  .section-title {
+    border-bottom: 1.5px solid ${({ theme }) => theme.colors.primary};
+    line-height: 0.1em;
+    margin: 0 0 60px 0;
+    font-size: 3.2rem;
+
+    span {
+      background: #fff;
+      padding: 0 30px;
+    }
+  }
+
   .best-seller {
     max-width: 1200px;
-    margin: 0 auto 80px;
+    margin: 0 auto 8rem;
     text-align: center;
 
-    h1 {
-      border-bottom: 1.5px solid ${({ theme }) => theme.colors.primary};
-      line-height: 0.1em;
-      margin: 0 0 60px 0;
-
-      span {
-        background: #fff;
-        padding: 0 30px;
-      }
-    }
-
     &__products {
+      margin-bottom: 3rem;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 20px;
     }
+  }
 
-    &__view-all-button {
-      margin-top: 30px;
-      font-size: 18px;
-      padding: 15px 20px;
-      background-color: ${({ theme }) => theme.colors.primary};
-      color: ${({ theme: { colors } }) => colors.white};
+  .category {
+    max-width: 1200px;
+    margin: 0 auto 8rem;
+    text-align: center;
 
-      border: none;
-      transition: all 0.2s;
-
-      :hover {
-        background-color: #0a4463;
-        cursor: pointer;
-      }
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
     }
   }
 `;

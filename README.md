@@ -19,17 +19,25 @@ To deploy new code, you need to create a pull request to rebase changes onto the
 ## Set up
 
 ```bash
-# Install dependencies
+# 1. Install dependencies
 yarn
 
-# Serve with hot reload
+# 2. Create .env
+touch .env.develpment
+
+#### Paste the following values into the file ####
+GATSBY_GRAPHQL_IDE=playground
+CONTENTFUL_SPACE_ID=<CONTENTFUL_SPACE_ID>
+CONTENTFUL_ACCESS_TOKEN=<CONTENTFUL_ACCESS_TOKEN>
+
+# 3. Serve with hot reload
 yarn develop
 
-# Build for production and launch server
+# 4. Build for production and launch server
 yarn build
 yarn serve
 
-# Run unit tests
+# 5. Run unit tests
 yarn test
 ```
 

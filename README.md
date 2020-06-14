@@ -1,4 +1,4 @@
-# kiren-frontend-gatsby
+# kiren-gatsby-contentful
 
 ![Production workflow status](https://github.com/tanawitpat/kiren-gatsby-contentful/workflows/production/deploy/badge.svg)
 
@@ -12,9 +12,7 @@ Gatsby will fetch product data from Contentful and create product detail pages d
 
 ![Build process](https://user-images.githubusercontent.com/25366268/80006436-1144e780-84ef-11ea-8f94-3503272000a2.png)
 
-To deploy new code, you need to create a pull request to rebase changes onto the production branch.
-
-**Disclaimer:** This website was built for POC purpose. No part of this website shall be referenced.
+This website was built for POC purpose. No part of this website shall be referenced.
 
 ## Set up
 

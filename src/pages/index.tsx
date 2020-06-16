@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useIntl } from "gatsby-plugin-intl";
 
 import Layout from "../components/Layout";
 import FeatureCard from "../components/FeatureCard";
@@ -11,6 +12,7 @@ import { fetchBestSellerProducts } from "../queries";
 interface Props {}
 
 const IndexPage: React.FC<Props> = () => {
+  const intl = useIntl();
   const bestSellerProducts = fetchBestSellerProducts();
 
   return (
@@ -19,10 +21,12 @@ const IndexPage: React.FC<Props> = () => {
         <div className="carousel">
           <div className="carousel__cover">
             <div className="carousel__description">
-              <p>สร้างสรรค์โดยทีม@กริลโนเวเตอร์ Grillnavator</p>
+              <p>{intl.formatMessage({ id: "homepage.landingMessageOne" })}</p>
               <h1>คิเร็น Kiren</h1>
-              <p>เตาย่างแก๊ส/ไฟฟ้า/ถ่าน แผ่นย่างหมูกระทะ ชีส ชาบู</p>
-              <p>คุณภาพระดับธุรกิจเพื่อความราบรื่นของชีวิตคุณ</p>
+              <p>{intl.formatMessage({ id: "homepage.landingMessageTwo" })}</p>
+              <p>
+                {intl.formatMessage({ id: "homepage.landingMessageThree" })}
+              </p>
             </div>
           </div>
         </div>

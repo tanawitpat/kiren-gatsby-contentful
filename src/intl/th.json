@@ -1,0 +1,27 @@
+{
+  "header": {
+    "homepage": "หน้าแรก",
+    "products": "สินค้า",
+    "howToOrder": "วิธีการสั่งซื้อ",
+    "contact": "ติดต่อเรา"
+  },
+  "homepage": {
+    "landingMessageOne": "สร้างสรรค์โดยทีม@กริลโนเวเตอร์ Grillnavator",
+    "landingMessageTwo": "เตาย่างแก๊ส/ไฟฟ้า/ถ่าน แผ่นย่างหมูกระทะ ชีส ชาบู",
+    "landingMessageThree": "คุณภาพระดับธุรกิจเพื่อความราบรื่นของชีวิตคุณ"
+  },
+  "footer": {
+    "about": {
+      "title": "เกี่ยวกับเรา",
+      "content": "Grillnovator is a professional BBQ business consultant, manufacturer and distributor of BBQ equipment under Kiren ® Brand. With more than 10 years experience in the industry, we are ready to provide BBQ restaurant entrepreneurs with business grade equipment, designed with consideration to conditions of restaurant operation and end-user experience, in addition to industry insights."
+    },
+    "contact": {
+      "title": "ติดต่อเรา"
+    },
+    "remark": {
+      "title": "หมายเหตุ",
+      "developmentPurpose": "เว็บไซต์นี้ถูกสร้างขึ้นเพื่อการทดลองเท่านั้น ข้อมูลในเว็บไซต์นี้ไม่สามารถใช้อ้างอิงกับราคาสินค้าจริงได้",
+      "developedBy": "พัฒนาโดย Tanawit Pattanaveerangkoons"
+    }
+  }
+}

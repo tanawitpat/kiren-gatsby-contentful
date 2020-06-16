@@ -1,0 +1,27 @@
+{
+  "header": {
+    "homepage": "Home",
+    "products": "Products",
+    "howToOrder": "How to Order",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "landingMessageOne": "Invented by Grillnavator",
+    "landingMessageTwo": "Thai BBQ Stove / Plate",
+    "landingMessageThree": "Designed for your premium BBQ experience"
+  },
+  "footer": {
+    "about": {
+      "title": "About Us",
+      "content": "Grillnovator is a professional BBQ business consultant, manufacturer and distributor of BBQ equipment under Kiren ® Brand. With more than 10 years experience in the industry, we are ready to provide BBQ restaurant entrepreneurs with business grade equipment, designed with consideration to conditions of restaurant operation and end-user experience, in addition to industry insights."
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "remark": {
+      "title": "Remark",
+      "developmentPurpose": "This website was built for POC purpose. No part of this website shall be referenced.",
+      "developedBy": "Developed Tanawit Pattanaveerangkoons"
+    }
+  }
+}

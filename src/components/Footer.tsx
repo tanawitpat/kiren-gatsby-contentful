@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useIntl, Link, changeLocale } from "gatsby-plugin-intl";
 
 interface Props {}
 
 const Footer: React.FC<Props> = () => {
+  const intl = useIntl();
+
   return (
     <StyledFooter>
       <div className="footer__layout">
         <div className="footer__column footer__summary">
-          <h5 className="footer__title">เกี่ยวกับเรา</h5>
+          <h5 className="footer__title">
+            {intl.formatMessage({ id: "footer.about.title" })}
+          </h5>
           <p>
             Grillnovator is a professional BBQ business consultant, manufacturer
             and distributor of BBQ equipment under Kiren ® Brand. With more than
@@ -19,7 +24,9 @@ const Footer: React.FC<Props> = () => {
           </p>
         </div>
         <div className="footer__column footer__contact">
-          <h5 className="footer__title">ติดต่อเรา</h5>
+          <h5 className="footer__title">
+            {intl.formatMessage({ id: "footer.contact.title" })}
+          </h5>
           <div>
             <p>Grillnovator Limited Partnership</p>
             <p>21/507 Moo 8, Om Yai, Sam Phran, Nakhon Pathom 73160 Thailand</p>
@@ -35,13 +42,14 @@ const Footer: React.FC<Props> = () => {
           </div>
         </div>
         <div className="footer__column">
-          <h5 className="footer__title">หมายเหตุ</h5>
+          <h5 className="footer__title">
+            {intl.formatMessage({ id: "footer.remark.title" })}
+          </h5>
           <div>
             <p>
-              เว็บไซต์นี้ถูกสร้างขึ้นเพื่อการทดลองเท่านั้น
-              ข้อมูลในเว็บไซต์นี้ไม่สามารถใช้อ้างอิงกับราคาสินค้าจริงได้
+              {intl.formatMessage({ id: "footer.remark.developmentPurpose" })}
             </p>
-            <p>พัฒนาโดย Tanawit Pattanaveerangkoon</p>
+            <p>{intl.formatMessage({ id: "footer.remark.developedBy" })}</p>
           </div>
         </div>
       </div>

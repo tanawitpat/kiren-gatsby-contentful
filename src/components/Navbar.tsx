@@ -1,22 +1,38 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
+import { useIntl, Link, changeLocale } from "gatsby-plugin-intl";
 
-export default () => (
-  <StyledNavbar>
-    <div className="navbar">
-      <div className="navbar__left">
-        <Link to="/">Kiren BBQ</Link>
+interface Props {}
+
+const Navbar: React.FC<Props> = () => {
+  const intl = useIntl();
+
+  return (
+    <StyledNavbar>
+      <div className="navbar">
+        <div className="navbar__left">
+          <Link to="/">Kiren BBQ</Link>
+        </div>
+        <div className="navbar__right">
+          <Link to="/">{intl.formatMessage({ id: "header.homepage" })}</Link>
+          <Link to="/products">
+            {intl.formatMessage({ id: "header.products" })}
+          </Link>
+          <Link to="/how-to-order">
+            {intl.formatMessage({ id: "header.howToOrder" })}
+          </Link>
+          <Link to="/contact">
+            {intl.formatMessage({ id: "header.contact" })}
+          </Link>
+          <p>
+            <span onClick={() => changeLocale("th")}>TH</span> |{" "}
+            <span onClick={() => changeLocale("en")}>EN</span>
+          </p>
+        </div>
       </div>
-      <div className="navbar__right">
-        <Link to="/">หน้าแรก</Link>
-        <Link to="/products">สินค้า</Link>
-        <Link to="/how-to-order">วิธีการสั่งซื้อ</Link>
-        <Link to="/contact">ติดต่อเรา</Link>
-      </div>
-    </div>
-  </StyledNavbar>
-);
+    </StyledNavbar>
+  );
+};
 
 const StyledNavbar = styled.div`
   background-color: #f8f9fa;
@@ -33,15 +49,25 @@ const StyledNavbar = styled.div`
     display: flex;
     justify-content: space-between;
 
-    a {
+    * {
       font-size: 1.8rem;
       color: ${({ theme }) => theme.colors.black};
       text-align: center;
       text-decoration: none;
+      margin: 0;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    span {
       cursor: pointer;
     }
 
     &__right {
+      display: flex;
+
       > * {
         &:not(:last-child) {
           margin-right: 50px;
@@ -50,3 +76,5 @@ const StyledNavbar = styled.div`
     }
   }
 `;
+
+export default Navbar;

@@ -8,7 +8,10 @@
   "homepage": {
     "landingMessageOne": "สร้างสรรค์โดยทีม@กริลโนเวเตอร์ Grillnavator",
     "landingMessageTwo": "เตาย่างแก๊ส/ไฟฟ้า/ถ่าน แผ่นย่างหมูกระทะ ชีส ชาบู",
-    "landingMessageThree": "คุณภาพระดับธุรกิจเพื่อความราบรื่นของชีวิตคุณ"
+    "landingMessageThree": "คุณภาพระดับธุรกิจเพื่อความราบรื่นของชีวิตคุณ",
+    "category": "ประเภทสินค้า",
+    "bestSeller": "สินค้าขายดี",
+    "allProducts": "ดูสินค้าทั้งหมด"
   },
   "footer": {
     "about": {

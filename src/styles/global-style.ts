@@ -17,4 +17,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 16px;
   }
+
+  button {
+    font-family: "Poppins", "Kanit", "sans-serif";
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
 `;

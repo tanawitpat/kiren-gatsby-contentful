@@ -8,7 +8,10 @@
   "homepage": {
     "landingMessageOne": "Invented by Grillnavator",
     "landingMessageTwo": "Thai BBQ Stove / Plate",
-    "landingMessageThree": "Designed for your premium BBQ experience"
+    "landingMessageThree": "Designed for your premium BBQ experience",
+    "category": "Category",
+    "bestSeller": "Best Seller",
+    "allProducts": "All products"
   },
   "footer": {
     "about": {

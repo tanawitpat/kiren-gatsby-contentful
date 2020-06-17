@@ -46,7 +46,7 @@ const IndexPage: React.FC<Props> = () => {
         </div>
         <div className="category">
           <h2 className="section-title">
-            <span>ประเภทสินค้า</span>
+            <span>{intl.formatMessage({ id: "homepage.category" })}</span>
           </h2>
           <div className="category__items">
             <CategoryBox
@@ -59,7 +59,7 @@ const IndexPage: React.FC<Props> = () => {
         </div>
         <div className="best-seller">
           <h2 className="section-title">
-            <span>สินค้าขายดี</span>
+            <span>{intl.formatMessage({ id: "homepage.bestSeller" })}</span>
           </h2>
           <div className="best-seller__products">
             {bestSellerProducts.allContentfulProduct.edges.map((edge) => {
@@ -79,7 +79,7 @@ const IndexPage: React.FC<Props> = () => {
           </div>
           <div className="view-all-product-button">
             <InternalLinkButton
-              label="ดูสินค้าทั้งหมด"
+              label={intl.formatMessage({ id: "homepage.allProducts" })}
               targetPath="/products"
             />
           </div>

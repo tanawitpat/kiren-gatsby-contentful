@@ -1,4 +1,5 @@
 export const theme = {
+  fontFamily: `"Poppins", "Kanit", "sans-serif"`,
   colors: {
     primary: "#0e5f8a",
     white: "#FFFFFF",

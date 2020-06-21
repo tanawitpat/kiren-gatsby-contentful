@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Layout from "./Layout";
 import ProductCard from "./ProductCard";
 import InternalLinkButton from "./InternalLinkButton";
+import { device } from "../styles/device";
 
 interface Props {
   name: string;
@@ -53,13 +54,21 @@ const CategoryLayout: React.FC<Props> = ({ name, description, products }) => {
 const StyledProductsPage = styled.div`
   max-width: 1200px;
   margin: auto;
-  padding: 60px 60px;
+  padding: 60px;
+
+  @media ${device.tabLarge} {
+    padding: 30px;
+  }
 
   h1 {
     font-size: 3.2rem;
     text-align: center;
     margin-top: 0;
     margin-bottom: 50px;
+
+    @media ${device.tabLarge} {
+      margin-bottom: 30px;
+    }
   }
 
   .product-grid {
@@ -68,6 +77,15 @@ const StyledProductsPage = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
+
+    @media ${device.tabLarge} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media ${device.tabMedium} {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
   }
 
   .category-content {
@@ -75,6 +93,10 @@ const StyledProductsPage = styled.div`
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @media ${device.tabLarge} {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     &__image {
       height: 300px;
@@ -85,9 +107,14 @@ const StyledProductsPage = styled.div`
         ),
         url("/category1.jpg");
       background-size: cover;
+
+      @media ${device.tabLarge} {
+        display: none;
+      }
     }
 
     &__description {
+      font-size: 1.6rem;
       background-color: ${({ theme }) => theme.colors.lightgrey1};
       padding: 3rem;
 

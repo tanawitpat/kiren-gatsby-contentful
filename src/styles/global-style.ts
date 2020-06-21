@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { device } from "./device";
 
 export const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
@@ -9,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: "Poppins", "Kanit", "sans-serif";
     font-size: 62.5%;
+
+    @media ${device.tabSmall} {
+      font-size: 50%;
+    }
   }
 
   body {

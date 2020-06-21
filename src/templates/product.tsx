@@ -167,11 +167,11 @@ const StyledProduct = styled.div`
 
     &--price {
       margin: 0 0 5px 0;
-      font-size: 20px;
+      font-size: 2rem;
     }
 
     &--description {
-      font-size: 18px;
+      font-size: 1.8rem;
       margin-bottom: 3rem;
     }
 
@@ -252,6 +252,7 @@ const StyledProduct = styled.div`
       > ul {
         padding-left: 2rem;
       }
+
       > ul > li {
         &:not(:last-child) {
           margin-bottom: 1rem;

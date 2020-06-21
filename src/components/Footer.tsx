@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useIntl } from "gatsby-plugin-intl";
+import { device } from "../styles/device";
 
 interface Props {}
 
@@ -83,16 +84,26 @@ const StyledFooter = styled.div`
         height: 1px;
         border: 0;
       }
+
+      @media ${device.tabLarge} {
+        padding: 30px 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0px;
+      }
     }
 
     &__title {
-      font-size: 20px;
+      font-size: 2rem;
       text-align: center;
       margin: 0 0 20px;
     }
 
     &__column {
       padding: 50px 15px;
+
+      @media ${device.tabLarge} {
+        padding: 20px 15px;
+      }
     }
 
     &__summary {

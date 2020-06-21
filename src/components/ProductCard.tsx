@@ -54,6 +54,7 @@ const StyledProductCard = styled.div`
     &__name {
       margin: 10px 0;
       font-weight: bold;
+      font-size: 1.8rem;
       color: ${({ theme }) => theme.colors.black};
     }
 

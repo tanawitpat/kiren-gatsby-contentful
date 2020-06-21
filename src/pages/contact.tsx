@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Layout from "../components/Layout";
+import { device } from "../styles/device";
 
 interface Props {}
 
@@ -51,6 +52,10 @@ const StyledContactPage = styled.div`
   max-width: 1200px;
   margin: auto;
 
+  @media ${device.tabLarge} {
+    padding: 60px 20px;
+  }
+
   h1 {
     text-align: center;
     font-size: 3.2rem;
@@ -62,6 +67,11 @@ const StyledContactPage = styled.div`
     display: grid;
     grid-gap: 100px;
     grid-template-columns: repeat(2, 1fr);
+
+    @media ${device.tabLarge} {
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+    }
   }
 
   .google-map {
@@ -81,6 +91,10 @@ const StyledContactPage = styled.div`
 
     h4 {
       font-size: 2rem;
+
+      @media ${device.tabLarge} {
+        text-align: center;
+      }
     }
 
     &__container {
@@ -94,6 +108,10 @@ const StyledContactPage = styled.div`
         display: grid;
         grid-template-columns: 150px 1fr;
 
+        @media ${device.tabMedium} {
+          grid-template-columns: 1fr;
+        }
+
         h4 {
           font-weight: normal;
           margin: 0;
@@ -102,6 +120,10 @@ const StyledContactPage = styled.div`
         p {
           text-align: left;
           margin: 0;
+
+          @media ${device.tabMedium} {
+            text-align: center;
+          }
         }
 
         &:not(:last-child) {

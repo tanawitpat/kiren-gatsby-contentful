@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Layout from "../components/Layout";
+import { device } from "../styles/device";
 
 interface Props {}
 
@@ -39,8 +40,12 @@ const HowToOrderPage: React.FC<Props> = () => {
 const StyledHowToOrderPage = styled.div`
   margin: auto;
   max-width: 1200px;
-  padding: 60px 60px;
+  padding: 60px;
   text-align: center;
+
+  @media ${device.tabLarge} {
+    padding: 60px 20px;
+  }
 
   h1 {
     font-size: 3.2rem;
@@ -70,14 +75,26 @@ const StyledHowToOrderPage = styled.div`
       display: grid;
       grid-template-columns: 200px 1fr;
 
+      @media ${device.tabMedium} {
+        grid-template-columns: 1fr;
+      }
+
       h4 {
         font-weight: normal;
         margin: 0;
+
+        @media ${device.tabMedium} {
+          margin-bottom: 5px;
+        }
       }
 
       p {
         text-align: left;
         margin: 0;
+
+        @media ${device.tabMedium} {
+          text-align: center;
+        }
       }
 
       &:not(:last-child) {

@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import ProductCard from "../components/ProductCard";
 import CategoryBox from "../components/CategoryBox";
 import { fetchProducts } from "../queries";
+import { device } from "../styles/device";
 
 interface Props {}
 
@@ -49,7 +50,11 @@ const ProductsPage: React.FC<Props> = () => {
 const StyledProductsPage = styled.div`
   max-width: 1200px;
   margin: auto;
-  padding: 60px 60px;
+  padding: 60px;
+
+  @media ${device.tabLarge} {
+    padding: 30px;
+  }
 
   h1 {
     font-size: 3.2rem;
@@ -62,6 +67,14 @@ const StyledProductsPage = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
+
+    @media ${device.tabLarge} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media ${device.tabMedium} {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .category {
@@ -71,6 +84,10 @@ const StyledProductsPage = styled.div`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 2rem;
+
+      @media ${device.tabMedium} {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
   }
 `;

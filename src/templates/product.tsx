@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/Layout";
 import formatPrice from "../utils/formatPrice";
 import ExternalLinkButton from "../components/ExternalLinkButton";
+import { device } from "../styles/device";
 
 export const query = graphql`
   query($slug: String!) {
@@ -139,17 +140,28 @@ const StyledProduct = styled.div`
   margin: auto;
 
   .product {
-    padding: 5rem 2rem 0;
-    margin-bottom: 5rem;
+    padding: 50px 20px 0;
+    margin-bottom: 50px;
 
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-gap: 50px;
+
+    @media ${device.tabLarge} {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+    }
   }
 
   .product-image {
     width: 400px;
     height: 400px;
+
+    @media ${device.tabLarge} {
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
 
     img {
       width: 100%;
@@ -159,9 +171,13 @@ const StyledProduct = styled.div`
   .product-detail {
     padding: 0 20px;
 
+    @media ${device.tabLarge} {
+      padding: 0 10px;
+    }
+
     &--title {
       margin: 0 0 10px 0;
-      font-size: 32px;
+      font-size: 3.2rem;
       font-weight: normal;
     }
 
@@ -225,13 +241,21 @@ const StyledProduct = styled.div`
   }
 
   .policy {
+    font-size: 1.6rem;
     background-color: ${({ theme }) => theme.colors.lightgrey1};
-    margin-bottom: 7.5rem;
-    padding: 5rem;
+    margin-bottom: 75px;
+    padding: 50px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 7.5rem;
+    grid-gap: 75px;
+
+    @media ${device.tabLarge} {
+      margin-bottom: 0;
+
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 40px;
+    }
   }
 
   .policy-block {

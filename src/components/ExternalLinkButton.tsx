@@ -15,7 +15,7 @@ export const Button: React.FC<Props> = ({ label, targetPath }) => {
 };
 
 const StyledButton = styled.button`
-  font-size: 18px;
+  font-size: 1.8rem;
   padding: 1.5rem 2rem;
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme: { colors } }) => colors.white};

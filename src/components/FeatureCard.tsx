@@ -26,6 +26,7 @@ const StyledFeatureCard = styled.div`
   }
 
   p {
+    font-size: 1.6rem;
     margin: 0;
   }
 `;

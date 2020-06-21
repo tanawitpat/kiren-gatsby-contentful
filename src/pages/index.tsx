@@ -7,6 +7,7 @@ import FeatureCard from "../components/FeatureCard";
 import ProductCard from "../components/ProductCard";
 import CategoryBox from "../components/CategoryBox";
 import InternalLinkButton from "../components/InternalLinkButton";
+import { device } from "../styles/device";
 import { fetchBestSellerProducts } from "../queries";
 
 interface Props {}
@@ -123,6 +124,14 @@ const StyledIndexPage = styled.div`
         font-size: 2.8rem;
         line-height: 70%;
       }
+
+      @media ${device.tabMedium} {
+        padding: 0 2rem;
+
+        p {
+          line-height: 1.2;
+        }
+      }
     }
   }
 
@@ -135,11 +144,16 @@ const StyledIndexPage = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+
+    @media ${device.tabLarge} {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 60px 30px;
+    }
   }
 
   .section-title {
     border-bottom: 1.5px solid ${({ theme }) => theme.colors.primary};
-    line-height: 0.1em;
+    line-height: 1px;
     margin: 0 0 60px 0;
     font-size: 3.2rem;
 
@@ -151,27 +165,51 @@ const StyledIndexPage = styled.div`
 
   .best-seller {
     max-width: 1200px;
-    margin: 0 auto 8rem;
+    margin: 0 auto 80px;
     text-align: center;
 
+    @media ${device.tabLarge} {
+      margin: 0 auto 60px;
+    }
+
     &__products {
-      margin-bottom: 3rem;
+      margin-bottom: 30px;
 
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 20px;
+
+      @media ${device.tabLarge} {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 30px 20px;
+      }
+
+      @media ${device.tabMedium} {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media ${device.tabSmall} {
+        padding: 10px;
+      }
     }
   }
 
   .category {
     max-width: 1200px;
-    margin: 0 auto 8rem;
+    margin: 0 auto 80px;
     text-align: center;
 
     &__items {
+      padding: 0 10px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 2rem;
+      grid-gap: 20px;
+
+      @media ${device.tabMedium} {
+        padding: 0;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 20px;
+      }
     }
   }
 `;
